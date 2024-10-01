@@ -1,0 +1,691 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333;
+  height: 100%;
+}
+
+/* General Containers */
+.container, .form-container, .dashboard-section {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Form Elements */
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007acc;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005c99;
+}
+
+/* Header */
+h1, h2 {
+  text-align: center;
+  color: #007acc;
+}
+
+h2 {
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Logout Button */
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.logout-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Dashboard Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #007acc;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Button Groups */
+.red-button {
+  background-color: #dc3545;
+}
+
+.red-button:hover {
+  background-color: #c82333;
+}
+
+.green-button {
+  background-color: #28a745;
+}
+
+.green-button:hover {
+  background-color: #218838;
+}
+
+/* Commodities Control */
+.commodities-container {
+  align-items: center;
+}
+
+.commodity-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+
+.commodity-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 25%; /* Allows for three items per row with some spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 25%; /* Prevents the items from getting too large */
+}
+
+.commodity-item:hover {
+  transform: translateY(-5px);
+}
+
+.commodity-title {
+  color: #007acc;
+  font-size: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Ensures buttons are separated */
+  flex-wrap: wrap; /* Makes the buttons wrap when space is insufficient */
+}
+
+.button-group button {
+  flex: 1; /* Ensure buttons take equal width */
+  padding: 10px; /* Add padding for better appearance */
+  margin: 0; /* Remove margins */
+  text-align: center; /* Center text inside buttons */
+  font-size: 14px; /* Adjust font size */
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+
+  .button-group button {
+    width: 100%; /* Full width buttons on small screens */
+  }
+}
+
+
+
+/* Login Page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('..//back.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+label {
+  color: #007acc;
+}
+
+h1 {
+  color: #0fc546;
+}
+
+a {
+  color: #007acc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  margin-bottom: 40px;
+  width: 80%;
+  max-width: 1200px;
+}
+
+h2 {
+  color: #007acc;
+}
+
+/* Tables in Dashboard */
+.dashboard-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-section table th, .dashboard-section table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dashboard-section table th {
+  background-color: #007acc;
+  color: white;
+}
+
+.dashboard-section table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.reservations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.reservation-card {
+  background-color: #d4edda;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  width: 1 1 25%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.reservation-card:hover {
+  transform: translateY(-5px);
+}
+
+.reservation-card h3 {
+  color: #007acc;
+  font-size: 1.2em;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+.past-reservation {
+  background-color: #f8d7da; /* Light red background for past reservations */
+}
+
+.present-reservation {
+  background-color: #fff3cd; /* Light yellow background for current reservations */
+}
+
+.future-reservation {
+  background-color: #d4edda; /* Light green background for future reservations */
+}
+
+.legend-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+/* Pro tabulky na menších obrazovkách */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap; /* Zamezí zalamování textu */
+  }
+
+  /* Zajistí, že se buňky budou v mobilním zobrazení dobře přizpůsobovat */
+  table th, table td {
+    white-space: nowrap;
+  }
+}
+/* Pro buttony v kartičkách */
+@media (max-width: 768px) {
+  .button-group button {
+    width: 100%; /* Zajistí, že tlačítko bude mít 100% šířky kartičky */
+    margin-top: 10px; /* Zajistí dostatečný prostor mezi tlačítky */
+  }
+}
+/* CSS for the reservation form */
+.reservation-form {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.reservation-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.reservation-form p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.reservation-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.reservation-form input,
+.reservation-form .react-datepicker-wrapper {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.reservation-form button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+  background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .reservation-form {
+    padding: 15px;
+  }
+
+  .reservation-form h3 {
+    font-size: 1.2rem;
+  }
+
+  .reservation-form button {
+    font-size: 1rem;
+  }
+}
+/* Vlastní úpravy stylů DatePickeru */
+.react-datepicker__input-container input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #0f0f0f;
+}
+
+.react-datepicker__header {
+  background-color: #007acc; /* Změna barvy pozadí */
+  color: white; /* Barva textu */
+}
+
+.react-datepicker__day--selected {
+  background-color: #007acc; /* Barva vybraného dne */
+  color: white;
+}
+
+.react-datepicker__day {
+  padding: 5px; /* Upravte padding pro dny v kalendáři */
+}
+
+.react-datepicker__day:hover {
+  background-color: #005c99; /* Barva pozadí při hover efektu */
+}
+
+.react-datepicker__navigation--next--with-time{
+  background-color: #005c99;
+  border: 2px #0f0f0f;
+}
+
+/* Ensure visibility and customization of navigation buttons */
+.react-datepicker__navigation--previous {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+  position: absolute !important;
+  left: 10px !important;
+  width: 32px !important;
+  height: 32px !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-datepicker__navigation--next {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+  position: absolute !important;
+  right: 150px !important;
+  width: 32px !important;
+  height: 32px !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Improve arrow icon visibility */
+.react-datepicker__navigation-icon::before {
+  content: '';
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 1px;
+}
+
+.react-datepicker__navigation--previous .react-datepicker__navigation-icon::before {
+  transform: rotate(225deg);
+}
+
+.react-datepicker__navigation--next .react-datepicker__navigation-icon::before {
+  transform: rotate(45deg);
+}
+
+/* Enhance hover effects for navigation buttons */
+.react-datepicker__navigation:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: #ffffff;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.time-slot {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.time-slot.available {
+  background-color: #28a745;
+  color: white;
+}
+
+.time-slot.reserved {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Styling for userTable */
+/* Table container for responsiveness */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling for touch devices */
+}
+
+/* General Table Styling */
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.userTable th,
+.userTable td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.userTable th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.userTable td {
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.userTable td,
+.userTable th {
+  text-align: center;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .userTable th, .userTable td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Stack the table rows */
+  .userTable td {
+    display: block;
+    text-align: right;
+    white-space: normal;
+    padding: 10px;
+  }
+
+  .userTable td::before {
+    content: attr(data-label); /* Label each cell with its corresponding header */
+    font-weight: bold;
+    float: left;
+    text-transform: uppercase;
+  }
+
+  .userTable th {
+    display: none; /* Hide headers on smaller screens */
+  }
+}
+
+/* Base styling for larger screens */
+.reservationTableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.reservationTableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservationTableContainer th, 
+.reservationTableContainer td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.reservationTableContainer th {
+  background-color: #007bff;
+  color: white;
+}
+
+.reservationTableContainer td button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.reservationTableContainer td button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for small screens */
+@media (max-width: 768px) {
+  .reservationTableContainer table {
+    display: block;
+  }
+
+  .reservationTableContainer thead {
+    display: none;
+  }
+
+  .reservationTableContainer tbody, 
+  .reservationTableContainer tr, 
+  .reservationTableContainer td {
+    display: block;
+    width: 100%;
+  }
+
+  .reservationTableContainer tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .reservationTableContainer td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .reservationTableContainer td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+/* General styling for table */
+.statisticsTableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.statisticsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statisticsTable th, .statisticsTable td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.statisticsTable th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Ensure table is scrollable on small screens */
+@media screen and (max-width: 768px) {
+  .statisticsTableContainer {
+      width: 100%;
+      overflow-x: auto;
+  }
+
+  .statisticsTable {
+      width: 1000px; /* Ensure table takes enough width to avoid squishing content */
+  }
+
+  .statisticsTable th, .statisticsTable td {
+      font-size: 14px; /* Slightly reduce font size on smaller screens */
+  }
+}
+
+/* For extra small screens */
+@media screen and (max-width: 576px) {
+  .statisticsTable th, .statisticsTable td {
+      padding: 8px;
+      font-size: 12px;
+  }
+}
+
