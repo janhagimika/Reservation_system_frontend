@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+Reservation system – Frontend
+Frontendová část rezervačního systému je postavena na React.js a komunikuje s backendem (Reservation system Backend on GitHub). Uživatelé mohou spravovat své profily, zobrazit dostupné služby, rezervovat komodity a spravovat nastavení systému (pro administrátory a manažery).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hlavní Funkcionality:
+•	Přihlášení a registrace: Uživatelské přihlášení, JWT token je uložen a používán pro autentizaci.
+•	Dashboardy založené na rolích: Speciální dashboardy pro Admin, Manager a User, každý s různými úrovněmi přístupu.
+•	Správa komodit: Seznam a správa pokojů, barů, lanovek.
+•	Systém rezervací: Uživatelé vidí dostupné časy pro jednotlivé komodity a mohou si rezervovat časové sloty.
+•	Profil uživatele: Uživatelé mohou upravovat své údaje.
+•	Zobrazení dostupných časových bloků: Na základě vybrané komodity systém zobrazí volné časové sloty, které uživatel může rezervovat.
 
-## Available Scripts
+Hlavní Komponenty:
+•	LoginPage.js – Přihlášení uživatele a správa JWT tokenu.
+•	RegistrationPage.js – Registrace nového uživatele.
+•	UserProfile.js – Zobrazení a editace profilu uživatele.
+•	AvailableCommodities.js – Zobrazuje dostupné komodity a umožňuje rezervaci časových bloků.
+•	AdminDashboard.js, ManagerDashboard.js, UserDashboard.js – Speciální dashboardy pro role.
+•	CommoditiesControl.js – Admin a manažer mohou spravovat komodity (pokoje, bary, lanovky).
+•	Axios konfigurace: Axios se používá pro volání API, zajišťuje automatické přidání JWT tokenu do požadavků.
 
-In the project directory, you can run:
+Jak spustit frontend:
+1.	Naklonujte repozitář a přejděte do složky frontend.
+2.	Nainstalujte závislosti:
+npm install react-router-dom axios
+3.	Spusťte aplikaci:
+npm start
+4.	Aplikace bude dostupná na https://localhost:3000. Ujistěte se, že backend běží a HTTPS certifikát je nastaven správně.
+________________________________________
+HTTPS konfigurace pro frontend:
+•	Frontend komunikuje s backendem přes HTTPS pomocí Axios knihovny. Axios instance je nastavena tak, aby přidávala JWT tokeny ke každému požadavku a automaticky obnovovala tokeny, pokud vyprší.
+•	Pro správnou HTTPS komunikaci mezi frontendem a backendem je třeba zajistit, aby prohlížeč důvěřoval certifikátu vytvořenému pro backend.
+•	AXIOS - Tímto způsobem se veškerá komunikace mezi frontendem a backendem provádí přes HTTPS a je zajištěna pomocí JWT tokenů.
 
-### `npm start`
+Příkladné screenshoty UI(tvorba rezervace):
+![Screenshot_19](https://github.com/user-attachments/assets/23e51c53-f867-4c3c-8588-aeccdeb66291)
+![Screenshot_20](https://github.com/user-attachments/assets/20980850-88d8-42e1-b32a-716526434bab)
+![Screenshot_21](https://github.com/user-attachments/assets/5ad75cc0-16f2-421a-b625-b1a6e8b2a39e)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+•  Screenshot 19: Výběr času rezervace
+Tento screenshot ukazuje uživatelské rozhraní, kde uživatel vybírá datum a čas pro rezervaci stolu v baru. Uživatel klikne na požadované datum v kalendáři a následně si může vybrat časový blok pro rezervaci.
+•  Screenshot 20: Úspěšná rezervace
+Na tomto obrázku uživatel již provedl rezervaci a ta je zobrazena v přehledu jeho minulých a současných rezervací. Je zde možnost rezervaci zrušit pomocí tlačítka "Zrušit rezervaci".
+•  Screenshot 21: Výběr volných časů pro rezervaci
+Tento screenshot ukazuje, jak jsou zobrazeny dostupné časové bloky pro konkrétní komoditu. Uživatel si může vybrat začátek a konec rezervace z dostupných časů a poté potvrdit rezervaci tlačítkem "Rezervovat".
+•  V sekci Rezervace se potvrzené rezervace automaticky aktualizovali.
