@@ -60,7 +60,9 @@ Example Manager UI Screenshots (Statistics):
 
 
 
+
 Czech version of readme:
+
 Frontendová část rezervačního systému je postavena na React.js a komunikuje s backendem (Reservation system Backend on GitHub). Uživatelé mohou spravovat své profily, zobrazit dostupné služby, rezervovat komodity a spravovat nastavení systému (pro administrátory a manažery).
 
 Hlavní Funkcionality:
