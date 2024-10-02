@@ -32,24 +32,30 @@ HTTPS Configuration for Frontend:
 Example User UI Screenshots (Making a Reservation):
 
  ![Screenshot_19](https://github.com/user-attachments/assets/23e51c53-f867-4c3c-8588-aeccdeb66291)
+ 
 •	Screenshot 1: Time selection for a reservation. This screenshot shows the user interface where a user selects the date and time for booking a table in a bar. The user clicks on the desired date in the calendar and can then choose the time slot for the reservation.
 
 ![Screenshot_20](https://github.com/user-attachments/assets/20980850-88d8-42e1-b32a-716526434bab)
+
 •	Screenshot 2: Successful reservation. In this image, the user has successfully made a reservation, which is displayed in the overview of past and current reservations. There is an option to cancel the reservation using the "Cancel Reservation" button.
 
  ![Screenshot_21](https://github.com/user-attachments/assets/5ad75cc0-16f2-421a-b625-b1a6e8b2a39e)
+ 
 •	Screenshot 3: Available time slots for booking. This screenshot shows how available time slots for a specific commodity are displayed. The user can select the start and end times from the available slots and confirm the reservation using the "Reserve" button.
 •	In the Reservations section, confirmed reservations are automatically updated.
 
 Example Admin UI Screenshots (System Management):
  ![Screenshot_22](https://github.com/user-attachments/assets/ef99253f-48ea-4d19-bbe7-43d7b42b56ad)
+ 
 •	Screenshot 4: Adjusting operating hours. The administrator can set and adjust the operating hours for various commodities, such as a bar or lift. It is also possible to reset the database, which will return the system to its default state.
 
  ![Screenshot_23](https://github.com/user-attachments/assets/54f13658-00ba-468a-9168-f3d2dccabdc3)
+ 
 •	Screenshot 5: Modifying and creating new commodities. The administrator can edit commodity details such as name, capacity, or status and save the changes.
 
 Example Manager UI Screenshots (Statistics):
 ![Screenshot_24](https://github.com/user-attachments/assets/0a22c9ad-e24f-4341-950e-e3a8dc6235a3)
+
 •	Screenshot 6: User reservation statistics. This screenshot displays an overview of statistics and reports for individual users. For each user, you can see the total number of reservations, the most frequently booked commodity, and the number of past, active, and future reservations. This helps administrators and managers easily analyze system usage.
 
 
