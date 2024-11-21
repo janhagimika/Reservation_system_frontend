@@ -6,6 +6,8 @@ import '../../styles/App.css'; // Assuming you have some CSS for styling
 function ManageReservations() {
     const [reservations, setReservations] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchName, setSearchName] = useState(""); // State for name filter
+    const [searchDate, setSearchDate] = useState(""); // State for date filter
 
     useEffect(() => {
         fetchReservations();
@@ -37,6 +39,42 @@ function ManageReservations() {
         }
     };
 
+    const searchByName = async () => {
+        setLoading(true);
+        try {
+            const response = await axiosConfig.get('/reservations/searchByName', {
+                params: { name: searchName }, // Value from the input field
+            });
+            setReservations(response.data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error searching reservations by name:', error);
+            setLoading(false);
+        }
+    };
+    
+    const searchByDate = async () => {
+        setLoading(true);
+        try {
+            const response = await axiosConfig.get('/reservations/searchByDate', {
+                params: { date: searchDate }, // Value from the date picker
+            });
+            setReservations(response.data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error searching reservations by date:', error);
+            setLoading(false);
+        }
+    };
+
+    const clearSearch = async () => {
+        setSearchName("");
+        setSearchDate("");
+        await fetchReservations();
+    };
+    
+    
+
     return (
         <div>
             <h2>Správa Rezervací</h2>
@@ -44,6 +82,31 @@ function ManageReservations() {
                 <p>Načítání rezervací...</p>
             ) : (
                 <div className="reservationTableContainer">
+                    <div className="searchContainer">
+                        <div className="searchField">
+                            <label>Hledat podle jména:</label>
+                            <input
+                                type="text"
+                                value={searchName}
+                                onChange={(e) => setSearchName(e.target.value)}
+                                placeholder="Zadejte jméno"
+                            />
+                            <button onClick={searchByName}>Hledat podle jména</button>
+                        </div>
+                        <div className="searchField">
+                            <label>Hledat podle data:</label>
+                            <input
+                                type="date"
+                                value={searchDate}
+                                onChange={(e) => setSearchDate(e.target.value)}
+                            />
+                            <button onClick={searchByDate}>Hledat podle data</button>
+                        </div>
+                        <button className="clearButton" onClick={clearSearch}>
+                            Zobrazit všechny rezervace
+                        </button>
+                    </div>
+
                     <table>
                         <thead>
                             <tr>
@@ -56,43 +119,39 @@ function ManageReservations() {
                             </tr>
                         </thead>
                         <tbody>
-                            {reservations.map(({ reservation, commodity }) => (
+                            {reservations.map((reservation) => (
                                 <tr key={reservation.id}>
                                     <td>{reservation.id}</td>
                                     <td>
                                         <strong>Jméno:</strong> {reservation.user.firstName} {reservation.user.surname} <br />
                                         <strong>Email:</strong> {reservation.user.email} <br />
                                         <strong>Telefon:</strong> {reservation.user.phoneNumber} <br />
-                                        <strong>Uživatelské jméno:</strong> {reservation.user.username} <br />
+                                        <strong>Uživatelské jméno:</strong> {reservation.user.username}
                                     </td>
                                     <td>
-                                    {commodity && commodity.service && (
-                                        <div>
-                                        <strong>Komodita:</strong> {commodity.service.serviceName}<br />
-                                        <strong>Kapacita:</strong> {commodity.capacity || commodity.service.capacity}<br />
-                                        {commodity.pricePerNight && (
+                                        <strong>Název služby:</strong> {reservation.service.serviceName} <br />
+                                        {reservation.service.cuisineType && (
                                             <>
-                                            <strong>Cena za noc:</strong> {commodity.pricePerNight}<br />
+                                                <strong>Typ kuchyně:</strong> {reservation.service.cuisineType} <br />
                                             </>
                                         )}
-                                        {commodity.cuisineType && (
+                                        {reservation.service.location && (
                                             <>
-                                            <strong>Typ kuchyně:</strong> {commodity.cuisineType}<br />
+                                                <strong>Umístění:</strong> {reservation.service.location} <br />
                                             </>
                                         )}
-                                        {commodity.location && (
+                                        {reservation.service.type && (
                                             <>
-                                            <strong>Umístění:</strong> {commodity.location}<br />
+                                                <strong>Typ:</strong> {reservation.service.type} <br />
                                             </>
                                         )}
-                                        {commodity.status && (
+                                        {reservation.service.pricePerNight && (
                                             <>
-                                            <strong>Stav:</strong> {commodity.status}<br />
+                                                <strong>Cena za noc:</strong> {reservation.service.pricePerNight} <br />
                                             </>
                                         )}
-                                        </div>
-                                    )}
                                     </td>
+
                                     <td>{new Date(reservation.startTime).toLocaleString()}</td>
                                     <td>{new Date(reservation.endTime).toLocaleString()}</td>
                                     <td>
