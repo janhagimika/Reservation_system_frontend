@@ -665,6 +665,53 @@ h2 {
   font-weight: bold;
 }
 
+* Updated container to stack items vertically */
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Styling each search field */
+.searchField {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Styling input fields */
+.searchField input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Buttons inside the search container */
+.searchField button,
+.clearButton {
+    padding: 8px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.searchField button:hover,
+.clearButton:hover {
+  background-color: #005c99;
+}
+
 /* Ensure table is scrollable on small screens */
 @media screen and (max-width: 768px) {
   .statisticsTableContainer {
