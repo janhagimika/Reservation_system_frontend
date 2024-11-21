@@ -237,8 +237,8 @@ function FullCommoditiesControl() {
                             />
                             <input
                                 type="text"
-                                value={newItem.capacity}
-                                onChange={(e) => setNewItem({ ...newItem, capacity: e.target.value })}
+                                value={editItem.capacity}
+                                onChange={(e) => setEditItem({ ...editItem, capacity: e.target.value })}
                                 placeholder="Kapacita"
                             />
                         </>
