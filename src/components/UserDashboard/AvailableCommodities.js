@@ -269,6 +269,7 @@ function AvailableCommodities({ refreshReservations }) {    // Accept fetchReser
                             <p>Název: {bar?.serviceName}</p>
                             <p>Typ kuchyně: {bar?.cuisineType}</p>
                             <p>Umístění: {bar?.location}</p>
+                            <p>Kapacita: {bar?.capacity}</p>
                             <div className="button-group">
                                 <button className="green-button" onClick={() => handleCommoditySelection(bar, 'BAR')}>Rezervovat</button>
                             </div>
